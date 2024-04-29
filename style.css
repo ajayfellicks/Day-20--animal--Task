@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  background-color: rgb(255, 153, 0);
+  color: white;
+}
+
+.details-box {
+  padding: 0 4rem 2rem 4rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgb(255, 229, 191);
+  margin-top: 2rem;
+}
+
+.img-box {
+  width: 15rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 7px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+img {
+  width: 100%;
+}
+
+.stats {
+  width: 100%;
+  padding: 0 15rem;
+}
+
+.progress {
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: rgb(255, 153, 0) !important;
+}
+
+.fn-btn {
+  border: none;
+  padding: 0.5rem 3rem;
+  background-color: rgb(255, 153, 0);
+  border-radius: 7px;
+}
+.fn-btn:hover {
+  background-color: rgb(202, 121, 0);
+}
+
+.wp-btn {
+  border: 2px solid rgb(255, 153, 0);
+  padding: 0.5rem 3rem;
+  background-color: transparent;
+  border-radius: 7px;
+}
+.wp-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.wp-btn a {
+  text-decoration: none;
+  color: black;
+}
