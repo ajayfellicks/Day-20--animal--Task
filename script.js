@@ -35,49 +35,60 @@ find.addEventListener("click", () => {
   res
     .then((data) => data.json())
     .then((result) => {
-      // getProfile(result);
       // console.log(result);
       for (let i = 0; i < result.length; i++) {
         if (catBreedName === result[i].name) {
-          const pic = result[i].id;
-          fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${pic}`)
+          const catID = result[i].id;
+          fetch(
+            `https://api.thecatapi.com/v1/images/search?breed_ids=${catID}&api_key=live_0aDBDzOiRygr4pPTz2keS68c3amzk08S8YorbubLRu1Ilr4qLKV5eS7Xb5rEwYOV`
+          )
             .then((data1) => data1.json())
-            .then((catPicUrl) => {
-              const catURL = catPicUrl[0].url;
-              // console.log(catURL);
-              const image = document.getElementById("catImg");
-              image.innerHTML = `<img src="${catURL}" alt="" />`;
+            .then((catDetail) => {
+              // console.log(catDetail);
+              const catPic = catDetail[0].url;
+              // console.log(catPic);
+              const catName = catDetail[0].breeds[0].name;
+              // console.log(catName);
+              const catOrigin = catDetail[0].breeds[0].origin;
+              // console.log(catOrigin);
+              const catDescription = catDetail[0].breeds[0].description;
+              // console.log(catDescription);
+              const catTemperament = catDetail[0].breeds[0].temperament;
+              // console.log(catTemperament);
+              const catAdaptability = catDetail[0].breeds[0].adaptability;
+              // console.log(catAdaptability);
+              const catChildFriendly = catDetail[0].breeds[0].child_friendly;
+              // console.log(catChildFriendly);
+              const catGrooming = catDetail[0].breeds[0].grooming;
+              // console.log(catGrooming);
+              const catIntelligence = catDetail[0].breeds[0].intelligence;
+              // console.log(catIntelligence);
+              const catSheddingLevel = catDetail[0].breeds[0].shedding_level;
+              // console.log(catSheddingLevel);
+              const catWiki = catDetail[0].breeds[0].wikipedia_url;
+              // console.log(catWiki);
+
+              getProfile(
+                catPic,
+                catName,
+                catOrigin,
+                catDescription,
+                catTemperament,
+                catAdaptability,
+                catChildFriendly,
+                catGrooming,
+                catIntelligence,
+                catSheddingLevel,
+                catWiki
+              );
             });
-
-          const catName = result[i].name;
-          const catOrigin = result[i].origin;
-          const catDescription = result[i].description;
-          const catTemperament = result[i].temperament;
-          const catAdaptability = result[i].adaptability;
-          const catChildFriendly = result[i].child_friendly;
-          const catGrooming = result[i].grooming;
-          const catIntelligence = result[i].intelligence;
-          const catSheddingLevel = result[i].shedding_level;
-          const catWiki = result[i].wikipedia_url;
-
-          getProfile(
-            catName,
-            catOrigin,
-            catDescription,
-            catTemperament,
-            catAdaptability,
-            catChildFriendly,
-            catGrooming,
-            catIntelligence,
-            catSheddingLevel,
-            catWiki
-          );
         }
       }
     });
 });
 
 function getProfile(
+  catPic,
   catName,
   catOrigin,
   catDescription,
@@ -114,8 +125,8 @@ function getProfile(
   // console.log(sheddinglevel);
 
   main.innerHTML = `<div class="details-box d-flex flex-column align-items-center">
-  <div id="catImg" class="img-box mt-5">
-    <img src="" alt="" />
+  <div class="img-box mt-5">
+    <img src="${catPic}" alt="" />
   </div>
   <h1 class="cat-name mt-3">${catName}</h1>
   <p class="origin"><b>origin :</b> ${catOrigin}</p>
