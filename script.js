@@ -1,6 +1,10 @@
+// selecting ids
+
 const catBreed = document.getElementById("catBreed");
 const find = document.getElementById("find");
 const main = document.getElementById("main-detail");
+
+// eventlistener to create cat list in select element
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch("https://api.thecatapi.com/v1/breeds")
@@ -27,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(err);
     });
 });
+
+// eventlistener for find button
 
 find.addEventListener("click", () => {
   const catBreedName = catBreed.value;
@@ -86,6 +92,8 @@ find.addEventListener("click", () => {
       }
     });
 });
+
+// function to print the input to UI from API
 
 function getProfile(
   catPic,
@@ -151,7 +159,7 @@ function getProfile(
       ></div>
     </div>
   </div>
-  <div class="stats mt-3">
+  <div class="stats mt-3 ">
     <p class="m-0"><b>Child Friendly</b></p>
     <div class="progress mt-2">
       <div
@@ -203,7 +211,7 @@ function getProfile(
       ></div>
     </div>
   </div>
-  <button class="wp-btn mt-4">
+  <button class="wp-btn mt-5">
     <a
       href="${catWiki}"
       target="_blank"
