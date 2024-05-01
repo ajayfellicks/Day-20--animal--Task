@@ -1,1 +1,1 @@
-Day 20 Tak find details about animal(cat)
+Day 20 Task find details about animal(cat)
