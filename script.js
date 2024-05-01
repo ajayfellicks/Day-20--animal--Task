@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       catArray.forEach((ele) => {
         catOutput += `<option>${ele}</option>`;
       });
-      const catSelect = `<option id="catSelect" selected>--Select cat--</option>`;
+      const catSelect = `<option id="catSelect" selected>Select a Cat</option>`;
       catBreed.innerHTML = catSelect + catOutput;
     })
     .catch((err) => {
